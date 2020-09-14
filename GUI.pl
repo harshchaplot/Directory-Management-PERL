@@ -26,7 +26,7 @@ $mw->Button(
 )->pack;
 $mw->Button(
     -text    => 'Rename Directory',
-    -command => sub { exit },
+    -command => sub { rename_dir($dirname,$newdirname) },
 )->pack;
 $mw->Button(
     -text    => 'Delete a Directory',
@@ -93,5 +93,17 @@ sub delete_dir {
 	}
 	else{
 		$mw->Label(-text => "Couldn't remove $dir directory, $!\n")->pack;   
+	}
+}
+
+sub rename_dir {
+	my ($dir_name,$new_dir_name) = @_;
+	my $dir = $dir_name->get;
+	my $newdir = $new_dir_name->get;
+	if(rename($dir,$newdir)){
+		$mw->Label(-text => "Directory renamed\n")->pack;
+	}
+	else{
+		$mw->Label(-text => "Error in renaming")->pack;
 	}
 }
