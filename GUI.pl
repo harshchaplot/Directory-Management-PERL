@@ -64,7 +64,7 @@ sub create_dir {
 		$mw->Label(-text => "Directory created \n")->pack(-side => "top")->configure(-foreground => "black", -background => "white");
 	}
 	else{
-		$mw->Label(-text => "'$dir' directory cannot be created.\n")->pack(-side => "top")->configure(-foreground => "black", -background => "white");
+		$mw->Label(-text => "'$dir' directory cannot be created.\n")->pack(-side => "top")->configure(-foreground => "red", -background => "white");
 	}
 }
 
@@ -83,7 +83,7 @@ sub list_dir {
 		closedir DIR; 
 	}
 	else{
-		$mw->Label(-text => 'No Directory, ' + $dir)->pack(-side => "top")->configure(-foreground => "black", -background => "white");
+		$mw->Label(-text => 'No Directory, ' + $dir)->pack(-side => "top")->configure(-foreground => "red", -background => "white");
 	}
 }
 
@@ -102,7 +102,7 @@ sub list_file {
 		closedir $dh; 
 	}
 	else{
-		$mw->Label(-text =>  "Could not open '$dir' for reading\n")->pack(-side => "top")->configure(-foreground => "black", -background => "white");
+		$mw->Label(-text =>  "Could not open '$dir' for reading\n")->pack(-side => "top")->configure(-foreground => "red", -background => "white");
 	}
 }
 
@@ -113,7 +113,7 @@ sub delete_dir {
 		$mw->Label(-text => "Directory removed \n")->pack(-side => "top")->configure(-foreground => "black", -background => "white");
 	}
 	else{
-		$mw->Label(-text => "Couldn't remove $dir directory\n")->pack(-side => "top")->configure(-foreground => "black", -background => "white");   
+		$mw->Label(-text => "Couldn't remove $dir directory\n")->pack(-side => "top")->configure(-foreground => "red", -background => "white");   
 	}
 }
 
@@ -125,6 +125,6 @@ sub rename_dir {
 		$mw->Label(-text => "Directory renamed\n")->pack(-side => "top")->configure(-foreground => "black", -background => "white");
 	}
 	else{
-		$mw->Label(-text => "Error in renaming")->pack(-side => "top")->configure(-foreground => "black", -background => "white");
+		$mw->Label(-text => "Error in renaming")->pack(-side => "top")->configure(-foreground => "red", -background => "white");
 	}
 }
