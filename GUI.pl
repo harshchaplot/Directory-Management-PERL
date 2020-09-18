@@ -83,7 +83,7 @@ sub list_dir {
 		closedir DIR; 
 	}
 	else{
-		$mw->Label(-text => 'No Directory, ' + $dir)->pack(-side => "top")->configure(-foreground => "red", -background => "white");
+		$mw->Label(-text => "No Directory, '$dir'")->pack(-side => "top")->configure(-foreground => "red", -background => "white");
 	}
 }
 
